@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <% include themes/material-theme-for-hexo/layout/_partial/head.ejs %>
+    <title>
+        <%= page.title %>
+    </title>
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-app-bar app flat elevate-on-scroll>
+            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <v-toolbar-title><%= config.title %></v-toolbar-title>
+        </v-app-bar>
+        <v-main>
+            <v-divider></v-divider>
+        </v-main>
+    </v-app>
+</div>
+<% include themes/material-theme-for-hexo/layout/_partial/vuetify.ejs %>
+</body>
+</html>
