@@ -1,23 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <% include themes/material-theme-for-hexo/layout/_partial/head.ejs %>
-    <title>
-        <%= page.title %>
-    </title>
-</head>
-<body>
-<div id="app">
-    <v-app>
-        <v-app-bar app flat elevate-on-scroll>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            <v-toolbar-title><%= config.title %></v-toolbar-title>
-        </v-app-bar>
-        <v-main>
-            <v-divider></v-divider>
-        </v-main>
-    </v-app>
-</div>
-<% include themes/material-theme-for-hexo/layout/_partial/vuetify.ejs %>
-</body>
-</html>
+<%- include _partial/header.ejs %>
+<v-main>
+    <%- include('_partial/archive.ejs', { isHome: true, isTag: false, isCategory: false, isArchive: false }) %>
+    <v-fab-transition>
+        <v-btn
+                v-show="isFabShow"
+                color="primary"
+                dark
+                bottom
+                right
+                fab
+        >
+            <v-icon>mdi-arrow-up</v-icon>
+        </v-btn>
+    </v-fab-transition>
+</v-main>
+<%- include _partial/footer.ejs %>

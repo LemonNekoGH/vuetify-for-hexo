@@ -1,0 +1,22 @@
+<%- include _partial/header.ejs %>
+<v-main>
+    <% if (is_post()){ %>
+        <v-row justify="center">
+            <v-col xl="5" xs="11">
+                <v-card>
+                    <v-card-title><%- page.title %></v-card-title>
+                    <v-card-subtitle>创建时间：<%- date(page.date, "YYYY-MM-DD") %> |
+                        更新时间：<%- date(page.updated, "YYYY-MM-DD") %></v-card-subtitle>
+                    <br/>
+                    <v-card-text><%- page.content %></v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+    <% } %>
+    <% if (is_current("categories")){ %>
+        <%- include('_partial/archive.ejs', { isHome: false, isTag: false, isCategory: true, isArchive: false }) %>
+    <% }else if (is_current("tags")){ %>
+        <%- include('_partial/archive.ejs', { isHome: false, isTag: true, isCategory: false, isArchive: false }) %>
+    <% } %>
+</v-main>
+<%- include _partial/footer.ejs %>

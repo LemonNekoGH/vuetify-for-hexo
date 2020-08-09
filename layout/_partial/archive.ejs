@@ -1,0 +1,58 @@
+<% if (isTag || is_tag()){ %>
+    <v-row justify="center">
+        <v-col cols="10" xs="11" xl="5">
+            <v-card>
+                <v-card-title>
+                    标签云
+                </v-card-title>
+                <v-card-text>
+                    <% site.tags.forEach((tag) => { %>
+                        <v-chip href="<%= url_for(tag.path) %>" <% if (!is_tag(tag.name)){ %>outlined
+                                <% } %>
+                        ><%= tag.name %></v-chip>
+                    <% }); %>
+                </v-card-text>
+            </v-card>
+        </v-col>
+    </v-row>
+<% } %>
+<% if (isCategory || is_category()){ %>
+    <v-row justify="center">
+        <v-col cols="10" xs="11" xl="5">
+            <v-card>
+                <v-card-title>
+                    分类
+                </v-card-title>
+                <v-card-text>
+                    <% site.categories.forEach((category) => { %>
+                        <v-chip href="<%= url_for(category.path) %>" <% if (!is_category(category.name)){ %>outlined
+                                <% } %>
+                        ><%= category.name %></v-chip>
+                    <% }); %>
+                </v-card-text>
+            </v-card>
+        </v-col>
+    </v-row>
+<% } %>
+
+<% if (is_category() || is_tag() || is_home()){
+page.posts.forEach((post) => { %>
+    <%- include('post-card.ejs', {post: post}); %>
+<% });} %>
+<% if(is_archive()){
+    var postDate = undefined;
+page.posts.forEach((post) => {
+if (date(post.date, "YYYY") !== postDate){
+    postDate = date(post.date, "YYYY")
+%>
+<v-row justify="center" dense>
+    <v-col cols="10" xs="11" xl="5">
+        <v-card-title><%= postDate %></v-card-title>
+    </v-col>
+</v-row>
+<%- include('post-card.ejs', {post: post}); %>
+<% }else { %>
+    <%- include('post-card.ejs', {post: post}); %>
+<% }
+});
+} %>

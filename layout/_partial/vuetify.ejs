@@ -3,6 +3,30 @@
 <script>
     new Vue({
         el: '#app',
-        vuetify: new Vuetify(),
-    })
+        vuetify: new Vuetify({
+            theme: {
+                themes: {
+                    light: {
+                        primary: "#6200ea"
+                    }
+                }
+            }
+        }),
+        data: {
+            isDrawerOpen: false,
+            scrollToTop: true
+        },
+        mounted: function () {
+            window.onscroll = function () {
+                let t = document.documentElement.scrollTop || document.body.scrollTop;
+                this.scrollToTop = t > 350;
+                console.log(this.scrollToTop)
+            }
+        },
+        methods: {
+            toggleDrawer: function () {
+                this.isDrawerOpen = !this.isDrawerOpen
+            }
+        }
+    });
 </script>

@@ -1,0 +1,62 @@
+<v-navigation-drawer app temporary v-model="isDrawerOpen">
+    <v-list-item>
+        <v-list-item-avatar>
+            <% if(theme.avatar){ %>
+                <v-img src="<%= url_for(theme.avatar) %>"></v-img>
+            <% } else { %>
+                <v-icon>mdi-account</v-icon>
+            <% } %>
+        </v-list-item-avatar>
+        <v-list-item-content>
+            <v-list-item-title><%= config.author %></v-list-item-title>
+            <v-list-item-subtitle><%= config.description %></v-list-item-subtitle>
+        </v-list-item-content>
+    </v-list-item>
+    <v-divider></v-divider>
+    <v-list dense nav>
+        <v-list-item-group>
+            <v-list-item href="<%= url_for("/") %>" color="primary" link
+            <% if (is_home()){ %> class="v-item--active v-list-item--active"
+                    <% } %>
+            >
+                <v-list-item-icon>
+                    <v-icon>mdi-home</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>主页</v-list-item-content>
+            </v-list-item>
+            <% if (theme.category){ %>
+            <v-list-item href="<%= url_for("categories") %>" color="primary" link
+            <% if (is_current("categories")){ %> class="v-item--active v-list-item--active"
+                    <% } %>
+            >
+                <v-list-item-icon>
+                    <v-icon>mdi-view-dashboard</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>分类</v-list-item-content>
+            </v-list-item>
+            <% } %>
+            <% if (theme.tag){ %>
+            <v-list-item href="<%= url_for("tags") %>" color="primary" link
+            <% if (is_current("tag")){ %> class="v-item--active v-list-item--active"
+                    <% } %>
+            >
+                <v-list-item-icon>
+                    <v-icon>mdi-tag-multiple</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>标签</v-list-item-content>
+            </v-list-item>
+            <% } %>
+            <% if (theme.archive){ %>
+            <v-list-item href="<%= url_for("archives") %>" color="primary" link
+            <% if (is_archive()){ %> class="v-item--active v-list-item--active"
+                    <% } %>
+            >
+                <v-list-item-icon>
+                    <v-icon>mdi-archive</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>归档</v-list-item-content>
+            </v-list-item>
+            <% } %>
+        </v-list-item-group>
+    </v-list>
+</v-navigation-drawer>

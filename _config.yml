@@ -1,0 +1,11 @@
+# 导航抽屉里的头像
+avatar: images/avatar.JPG
+
+# 是否开启分类页面
+category: true
+
+# 是否开启标签页面
+tag: true
+
+# 是否开启分类页面
+archive: true

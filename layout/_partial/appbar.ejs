@@ -1,0 +1,23 @@
+<v-app-bar app color="primary" dark>
+    <v-app-bar-nav-icon>
+        <v-btn icon @click="toggleDrawer">
+            <v-icon>mdi-menu</v-icon>
+        </v-btn>
+    </v-app-bar-nav-icon>
+    <v-toolbar-title><a href="<%= url_for("/") %>" style="text-decoration: none;color: white"><%= config.title %>
+            <% if (is_current("categories")){ %>
+                | 分类
+            <% } else if (is_current("tags")){ %>
+                | 标签
+            <% } else if (is_archive()) { %>
+                | 归档
+            <% } else if (is_post()){ %>
+                | 文章详情
+            <% } %>
+        </a>
+    </v-toolbar-title>
+    <v-spacer></v-spacer>
+    <!--    <v-btn icon v-show="scrollToTop">-->
+    <!--        <v-icon>mdi-arrow-up</v-icon>-->
+    <!--    </v-btn>-->
+</v-app-bar>
