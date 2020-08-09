@@ -9,3 +9,8 @@
         max-width: 100%;
     }
 </style>
+<% if (theme.favicon){ %>
+    <link href="<%= url_for(theme.favicon) %>" rel="icon"/>
+<% } else { %>
+    <link href="<%= url_for("images/favicon-default.png") %>" rel="icon"/>
+<% } %>

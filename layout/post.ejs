@@ -2,7 +2,7 @@
 <v-main>
     <% if (is_post()){ %>
         <v-row justify="center">
-            <v-col xl="5" xs="11">
+            <v-col xl="5" xs="12">
                 <v-card>
                     <v-card-title><%- page.title %></v-card-title>
                     <v-card-subtitle>创建时间：<%- date(page.date, "YYYY-MM-DD") %> |
@@ -18,5 +18,6 @@
     <% }else if (is_current("tags")){ %>
         <%- include('_partial/archive.ejs', { isHome: false, isTag: true, isCategory: false, isArchive: false }) %>
     <% } %>
+    <%- include _partial/fab.ejs %>
 </v-main>
 <%- include _partial/footer.ejs %>

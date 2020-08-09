@@ -9,3 +9,6 @@ tag: true
 
 # 是否开启分类页面
 archive: true
+
+# 是否使用自定义favicon
+favicon: images/favicon.ico

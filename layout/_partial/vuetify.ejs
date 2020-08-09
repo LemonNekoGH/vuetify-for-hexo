@@ -14,14 +14,7 @@
         }),
         data: {
             isDrawerOpen: false,
-            scrollToTop: true
-        },
-        mounted: function () {
-            window.onscroll = function () {
-                let t = document.documentElement.scrollTop || document.body.scrollTop;
-                this.scrollToTop = t > 350;
-                console.log(this.scrollToTop)
-            }
+            isFabShow: true
         },
         methods: {
             toggleDrawer: function () {
@@ -29,4 +22,30 @@
             }
         }
     });
+
+    let fab = document.querySelector("#fab")
+
+    fab.style.transform = "scale(0.01)"
+    fab.style.transitionDuration = "300"
+
+    window.onscroll = function () {
+        let t = document.documentElement.scrollTop;
+        if (t > 350) {
+            fab.style.transform = "scale(1)"
+            fab.style.transitionDuration = "300"
+        } else {
+            fab.style.transform = "scale(0.01)"
+            fab.style.transitionDuration = "300"
+        }
+    }
+
+    fab.addEventListener("click", (evt) => {
+        (function smoothscroll() {
+            let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(smoothscroll);
+                window.scrollTo(0, currentScroll - (currentScroll / 5));
+            }
+        })();
+    })
 </script>
