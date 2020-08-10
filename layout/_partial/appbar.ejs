@@ -1,6 +1,12 @@
 <v-app-bar app color="<% if (theme.appBarColor){ %><%= theme.appBarColor %><% }else{ %>primary<% } %>"
            <% if (!theme.useLightAppBar){ %>dark
         <% } %>
+           <% if (theme.appBarBackground){ %>src="<%= url_for(theme.appBarBackground) %>"
+        <% } %>
+           <% if (theme.useLargerHeightOfAppBar){ %>prominent shrink-on-scroll
+        <% } %>
+           <% if (theme.fadeOutToPureColor){ %>fade-img-on-scroll
+        <% } %>
 >
     <v-app-bar-nav-icon>
         <v-btn icon @click="toggleDrawer">
