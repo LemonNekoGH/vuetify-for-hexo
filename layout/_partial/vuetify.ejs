@@ -7,7 +7,7 @@
             theme: {
                 themes: {
                     light: {
-                        primary: "#6200ea"
+                        primary: "<% if (theme.primaryColor){ %><%= theme.primaryColor %><% }else{ %>#6200ea<% } %>"
                     }
                 }
             }

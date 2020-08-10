@@ -12,3 +12,11 @@ archive: true
 
 # 是否使用自定义favicon
 favicon: images/favicon.ico
+
+# 主题相关
+# 是否使用自定义主题色 支持16进制颜色码，注意前面的井号（#）要转义
+primaryColor: \#6200ea
+# 是否使用自定义顶栏颜色 取消注释表示启用
+# appBarColor: \#ffffff
+# 是否使用亮色顶栏，如果你的顶栏颜色是亮色的话请启用 取消注释表示启用
+# useLightAppBar: true
