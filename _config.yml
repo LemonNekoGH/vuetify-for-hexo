@@ -24,8 +24,8 @@ primaryColor: \#6200ea
 # 是否使用亮色顶栏，如果你的顶栏颜色是亮色的话请启用 取消注释表示启用
 # useLightAppBar: true
 # 是否在顶栏中插入背景，需要提供背景图片的路径 取消注释表示启用
-appBarBackground: images/test-background.png
+# appBarBackground: images/test-background.png
 # 是否拓展顶栏高度，滑动后会折叠至正常高度，建议在有顶栏背景时启用 取消注释表示启用
-useLargerHeightOfAppBar: true
+# useLargerHeightOfAppBar: true
 # 折叠至正常高度后是否将顶栏过度成纯色 取消注释表示启用
-fadeOutToPureColor: true
+# fadeOutToPureColor: true
