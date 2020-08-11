@@ -9,6 +9,22 @@
                         更新时间：<%- date(page.updated, "YYYY-MM-DD") %></v-card-subtitle>
                     <br/>
                     <v-card-text><%- page.content %></v-card-text>
+                    <% if (page.prev || page.next){ %>
+                        <v-card-actions>
+                            <% if (page.prev){ %>
+                                <v-btn text color="primary" href="<%= url_for(page.prev.path) %>">
+                                    <v-icon>mdi-chevron-left</v-icon>
+                                    上一篇
+                                </v-btn>
+                            <% } %>
+                            <v-spacer></v-spacer>
+                            <% if (page.next){ %>
+                                <v-btn text color="primary" href="<%= url_for(page.next.path) %>">下一篇
+                                    <v-icon>mdi-chevron-right</v-icon>
+                                </v-btn>
+                            <% } %>
+                        </v-card-actions>
+                    <% } %>
                 </v-card>
             </v-col>
         </v-row>
@@ -19,5 +35,45 @@
         <%- include('_partial/archive.ejs', { isHome: false, isTag: true, isCategory: false, isArchive: false }) %>
     <% } %>
     <%- include _partial/fab.ejs %>
+    <% if (theme.comments && !is_current("categories") && !is_current("tags")){ %>
+        <% if (theme.comments === "livere"){ %>
+            <v-row justify="center">
+                <v-col xl="5" xs="12" lg="6" md="8" sm="11">
+                    <v-card>
+                        <v-card-title>评论区</v-card-title>
+                        <v-card-text>
+                            <div id="lv-container" data-id="city" data-uid="<%= theme.commentsUID %>">
+                                <script type="text/javascript">
+                                    (function (d, s) {
+                                        var j, e = d.getElementsByTagName(s)[0];
+
+                                        if (typeof LivereTower === 'function') {
+                                            return;
+                                        }
+
+                                        j = d.createElement(s);
+                                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                        j.async = true;
+
+                                        e.parentNode.insertBefore(j, e);
+                                    })(document, 'script');
+                                </script>
+                                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+            </v-row>
+        <% } %>
+    <% } %>
+    <v-footer app>
+        <span>Material-Theme-For-Hexo | 由Hexo强力驱动</span>
+        <v-spacer></v-spacer>
+        <span>&copy; </span>
+        <% if (theme.since){ %>
+            <span> <%= theme.since %> - <%= date(Date.now(), "YYYY") %>&nbsp;|</span>
+        <% } %>
+        <span>&nbsp;<%= config.author %> </span>
+    </v-footer>
 </v-main>
 <%- include _partial/footer.ejs %>

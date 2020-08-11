@@ -11,8 +11,11 @@ tag: true
 # 是否开启归档页面
 archive: true
 
-# 是否使用自定义favicon
-favicon: images/favicon.ico
+# 是否使用自定义favicon 取消注释表示
+# favicon: images/favicon-default.png
+
+# 始于YYYY年
+since: 2019
 
 #############################################################
 
@@ -29,3 +32,10 @@ primaryColor: \#6200ea
 # useLargerHeightOfAppBar: true
 # 折叠至正常高度后是否将顶栏过度成纯色 取消注释表示启用
 # fadeOutToPureColor: true
+
+#############################################################
+
+# 高级功能
+# 是否启用评论区，目前只支持来必力
+comments: livere
+commentsUID: MTAyMC80OTUwMy8yNTk5NA==

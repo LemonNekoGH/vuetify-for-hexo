@@ -1,5 +1,7 @@
 <% if (isTag || is_tag()){ %>
-    <v-row justify="center">
+    <v-row justify="center" <% if (isTag){ %>style="height: 100%" align="center"
+            <% } %>
+    >
         <v-col xs="12" xl="5" lg="6" md="8" sm="11">
             <v-card>
                 <v-card-title>
@@ -17,7 +19,9 @@
     </v-row>
 <% } %>
 <% if (isCategory || is_category()){ %>
-    <v-row justify="center">
+    <v-row justify="center" <% if (isCategory){ %>style="height: 100%" align="center"
+            <% } %>
+    >
         <v-col xs="12" xl="5" lg="6" md="8" sm="11">
             <v-card>
                 <v-card-title>
@@ -56,3 +60,12 @@ if (date(post.date, "YYYY") !== postDate){
 <% }
 });
 } %>
+<v-footer app>
+    <span>Material-Theme-For-Hexo | 由Hexo强力驱动</span>
+    <v-spacer></v-spacer>
+    <span>&copy; </span>
+    <% if (theme.since){ %>
+        <span> <%= theme.since %> - <%= date(Date.now(), "YYYY") %> |</span>
+    <% } %>
+    <span>&nbsp;<%= config.author %></span>
+</v-footer>

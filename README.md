@@ -24,9 +24,8 @@ theme: material-theme-for-hexo
 请到 [Github Issues](https://github.com/LemonNekoGH/material-theme-for-hexo/issues/new?assignees=&labels=Feature+Request&template=feature-request.md) 请求新的功能
 
 ### TODO-List
-- 多语言支持
-- 自定义导航风格
-- 文章页面上一页和下一页按钮
+- 评论区
+- （更多请提交Feature Request） 
 
 ### 感谢
 <img src="https://cn.vuejs.org//images/logo.png" height="100"/>[Vue.js](https://cn.vuejs.org)
