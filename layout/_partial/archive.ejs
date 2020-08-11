@@ -1,6 +1,6 @@
 <% if (isTag || is_tag()){ %>
     <v-row justify="center">
-        <v-col xs="12" xl="5">
+        <v-col xs="12" xl="5" lg="6" md="8" sm="11">
             <v-card>
                 <v-card-title>
                     标签云
@@ -18,7 +18,7 @@
 <% } %>
 <% if (isCategory || is_category()){ %>
     <v-row justify="center">
-        <v-col xs="12" xl="5">
+        <v-col xs="12" xl="5" lg="6" md="8" sm="11">
             <v-card>
                 <v-card-title>
                     分类
@@ -46,7 +46,7 @@ if (date(post.date, "YYYY") !== postDate){
     postDate = date(post.date, "YYYY")
 %>
 <v-row justify="center" dense>
-    <v-col xs="12" xl="5">
+    <v-col xs="12" xl="5" lg="6" md="8" sm="11">
         <v-card-title><%= postDate %></v-card-title>
     </v-col>
 </v-row>

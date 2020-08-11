@@ -29,6 +29,6 @@ theme: material-theme-for-hexo
 - 文章页面上一页和下一页按钮
 
 ### 感谢
-<img src="https://cn.vuejs.org//images/logo.png" height="100"/>Vue.js
+<img src="https://cn.vuejs.org//images/logo.png" height="100"/>[Vue.js](https://cn.vuejs.org)
 
-<img src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-300.png" height="100"/>Vuetify.js
+<img src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-300.png" height="100"/>[Vuetify.js](vuetifyjs.com)
