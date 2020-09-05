@@ -1,62 +1,48 @@
-<v-navigation-drawer app temporary v-model="isDrawerOpen">
-    <v-list-item>
-        <v-list-item-avatar>
-            <% if(theme.avatar){ %>
-                <v-img src="<%= url_for(theme.avatar) %>"></v-img>
+<div class="mdui-drawer mdui-shadow-24" id="drawer" style="background: white">
+    <ul class="mdui-list" style="padding-top: 0">
+        <li class="mdui-list-item mdui-ripple">
+            <% if (theme.avatar){ %>
+                <div class="mdui-list-item-avatar">
+                    <img src="<%= url_for(theme.avatar) %>"/>
+                </div>
             <% } else { %>
-                <v-icon>mdi-account</v-icon>
+                <i class="mdui-icon material-icons mdui-list-item-avatar">account-circle</i>
             <% } %>
-        </v-list-item-avatar>
-        <v-list-item-content>
-            <v-list-item-title><%= config.author %></v-list-item-title>
-            <v-list-item-subtitle><%= config.description %></v-list-item-subtitle>
-        </v-list-item-content>
-    </v-list-item>
-    <v-divider></v-divider>
-    <v-list dense nav>
-        <v-list-item-group>
-            <v-list-item href="<%= url_for("/") %>" color="primary" link
-            <% if (is_home()){ %> class="v-item--active v-list-item--active"
-                    <% } %>
-            >
-                <v-list-item-icon>
-                    <v-icon>mdi-home</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>主页</v-list-item-content>
-            </v-list-item>
-            <% if (theme.category){ %>
-            <v-list-item href="<%= url_for("categories") %>" color="primary" link
-            <% if (is_current("categories")){ %> class="v-item--active v-list-item--active"
-                    <% } %>
-            >
-                <v-list-item-icon>
-                    <v-icon>mdi-view-dashboard</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>分类</v-list-item-content>
-            </v-list-item>
-            <% } %>
-            <% if (theme.tag){ %>
-            <v-list-item href="<%= url_for("tags") %>" color="primary" link
-            <% if (is_current("tag")){ %> class="v-item--active v-list-item--active"
-                    <% } %>
-            >
-                <v-list-item-icon>
-                    <v-icon>mdi-tag-multiple</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>标签</v-list-item-content>
-            </v-list-item>
-            <% } %>
-            <% if (theme.archive){ %>
-            <v-list-item href="<%= url_for("archives") %>" color="primary" link
-            <% if (is_archive()){ %> class="v-item--active v-list-item--active"
-                    <% } %>
-            >
-                <v-list-item-icon>
-                    <v-icon>mdi-archive</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>归档</v-list-item-content>
-            </v-list-item>
-            <% } %>
-        </v-list-item-group>
-    </v-list>
-</v-navigation-drawer>
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title"><%= config.author %></div>
+                <div class="mdui-list-item-text"><%= config.description %></div>
+            </div>
+        </li>
+        <li class="mdui-divider"></li>
+        <li class="mdui-list-item mdui-ripple <% if (is_home()){ %>mdui-list-item-active<% } %>">
+            <i class="mdui-icon material-icons mdui-list-item-icon">home</i>
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title">首页</div>
+            </div>
+        </li>
+        <% if (theme.category){ %>
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_category()){ %>mdui-list-item-active<% } %>">dashboard</i>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">分类</div>
+                </div>
+            </li>
+        <% } %>
+        <% if (theme.tag){ %>
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_tag()){ %>mdui-list-item-active<% } %>">bookmark</i>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">标签</div>
+                </div>
+            </li>
+        <% } %>
+        <% if (theme.archive){ %>
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_archive()){ %>mdui-list-item-active<% } %>">archive</i>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">归档</div>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+</div>

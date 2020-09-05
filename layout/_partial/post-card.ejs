@@ -1,19 +1,12 @@
-<v-row justify="center">
-    <v-col lg="6" xs="11" xl="5" md="8" sm="11">
-        <v-card>
-            <v-card-title>
-                <%= post.title %>
-            </v-card-title>
-            <v-card-subtitle>创建时间：<%- date(post.date, "YYYY-MM-DD") %> |
-                更新时间：<%- date(post.updated, "YYYY-MM-DD") %></v-card-subtitle>
-            <v-card-text>
-                <%- post.excerpt %>
-            </v-card-text>
-            <v-card-actions>
-                <a href="<%= url_for(post.path) %>" style="text-decoration: none">
-                    <v-btn text color="primary">阅读更多</v-btn>
-                </a>
-            </v-card-actions>
-        </v-card>
-    </v-col>
-</v-row>
+<div class="mdui-card mdui-shadow-0" style="margin-top: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+    <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title"><%= post.title %></div>
+        <div class="mdui-card-primary-subtitle"><%= date(post.date, "YYYY-MM-DD") %></div>
+    </div>
+    <div class="mdui-card-content"><%- post.excerpt %></div>
+    <div class="mdui-card-actions">
+        <button class="mdui-btn mdui-ripple-black mdui-ripple mdui-color-theme">
+            <a href="<%= url_for(post.link) %>" style="text-decoration: none;color: black">阅读更多</a>
+        </button>
+    </div>
+</div>

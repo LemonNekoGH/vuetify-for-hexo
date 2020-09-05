@@ -1,5 +1,41 @@
-</v-app>
-</div>
-<% include vuetify.ejs %>
+<!-- MDUI JavaScript -->
+<script
+        src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
+        integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
+        crossorigin="anonymous"
+></script>
+<script>
+    (function () {
+        const drawer = new mdui.Drawer("#drawer", {overlay: true});
+        drawer.close();
+
+        const drawerToggle = document.querySelector("#drawer-toggle");
+
+        drawerToggle.addEventListener("click", () => drawer.toggle());
+
+        const appbar = document.querySelector("#appbar")
+
+        document.body.onscroll = () => {
+            const scrollTop = document.documentElement.scrollTop;
+            if (scrollTop >= 0 && scrollTop < 8) {
+                for (let i = 0; i <= 8; i++) {
+                    appbar.classList.remove("mdui-shadow-" + i)
+                }
+                appbar.classList.add("mdui-shadow-" + scrollTop)
+                if (scrollTop === 0) {
+                    appbar.style.background = "none"
+                } else {
+                    appbar.style.background = "#FFFFFF"
+                }
+            } else {
+                for (let i = 0; i <= 8; i++) {
+                    appbar.classList.remove("mdui-shadow-" + i)
+                }
+                appbar.classList.add("mdui-shadow-8")
+                appbar.style.background = "#FFFFFF"
+            }
+        }
+    })();
+</script>
 </body>
 </html>

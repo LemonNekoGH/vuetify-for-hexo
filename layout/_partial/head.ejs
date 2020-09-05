@@ -1,12 +1,30 @@
-<link href="https://fonts.lug.ustc.edu.cn/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"
+        integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP"
+        crossorigin="anonymous"
+/>
+<link href='https://fonts.loli.net/css?family=Open+Sans' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 <meta charset="UTF-8">
 <title><%= config.title %></title>
 <style>
-    p img {
-        max-width: 100%;
+    body {
+        font-family: Noto Sans SC, sans-serif;
+    }
+
+    #drawer .mdui-list-item-active {
+        color: black;
+        background-color: rgba(0, 0, 0, .12);
+    }
+
+    #drawer .mdui-list-item {
+        margin: 8px;
+        border-radius: 5px;
+    }
+
+    #drawer .mdui-list-item-active .mdui-list-item-icon {
+        color: black;
     }
 </style>
 <% if (theme.favicon){ %>

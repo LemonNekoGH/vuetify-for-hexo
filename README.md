@@ -24,7 +24,6 @@ theme: material-theme-for-hexo
 请到 [Github Issues](https://github.com/LemonNekoGH/material-theme-for-hexo/issues/new?assignees=&labels=Feature+Request&template=feature-request.md) 请求新的功能
 
 ### TODO-List
-- 评论区
 - （更多请提交Feature Request） 
 
 ### 感谢
