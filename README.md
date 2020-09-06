@@ -1,5 +1,5 @@
 # Material-Theme-For-Hexo
-![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.8.11-%236200ea)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.9.6-%236200ea)
 ![](https://img.shields.io/badge/Hexo版本-%3E%3D5.0.0-yellow)
 ![](https://img.shields.io/badge/许可证-Apache2.0-green)
 
@@ -24,9 +24,17 @@ theme: material-theme-for-hexo
 请到 [Github Issues](https://github.com/LemonNekoGH/material-theme-for-hexo/issues/new?assignees=&labels=Feature+Request&template=feature-request.md) 请求新的功能
 
 ### TODO-List
-- （更多请提交Feature Request） 
+- 样式切换
+- 导航样式切换
+- 评论区
+- 上/下一篇文章切换
+- 分页（需设置每页最多文章数）
+- 多语言
+- 夜间模式
 
 ### 感谢
-<img src="https://cn.vuejs.org//images/logo.png" height="100"/>[Vue.js](https://cn.vuejs.org)
+MDUI作者 [zdhxiong](https://github.com/zdhxiong)
 
-<img src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-300.png" height="100"/>[Vuetify.js](vuetifyjs.com)
+扫描以下二维码可向MDUI进行捐赠
+![支付宝](https://imgchr.com/i/wmKs74)
+![微信](https://imgchr.com/i/wmK6AJ)
