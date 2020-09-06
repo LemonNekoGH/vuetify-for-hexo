@@ -1,0 +1,20 @@
+<%- include _partial/header.ejs %>
+<div class="mdui-container">
+    <% if (page.path === "categories/index.html"){ %>
+        <%- include('_partial/top_of_post_card.ejs', { categories: site.categories }) %>
+    <% }else if (page.path === "tags/index.html"){ %>
+        <%- include('_partial/top_of_post_card.ejs', { categories: site.tags }) %>
+    <% }else{ %>
+        <div class="mdui-card mdui-shadow-0"
+             style="margin-top: 16px;margin-bottom: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title"><%- page.title %></div>
+                <div class="mdui-card-primary-subtitle"><%- date(page.date, "YYYY-MM-DD") %></div>
+            </div>
+            <div class="mdui-card-content">
+                <%- page.content %>
+            </div>
+        </div>
+    <% } %>
+</div>
+<%- include _partial/footer.ejs %>

@@ -11,27 +11,27 @@ tag: true
 # 是否开启归档页面
 archive: true
 
-# 是否使用自定义favicon 取消注释表示
+# 是否使用自定义favicon 取消注释表示启用
 # favicon: images/favicon-default.png
 
 # 始于YYYY年
 since: 2019
 
+# 显示夜间模式切换按钮
+showDarkModeSwitch: true
+
+# 开启自动夜间模式
+autoSwitchToDarkMode: true
+
 #############################################################
 
 # 主题相关
-# 是否使用自定义主题色 支持16进制颜色码，注意前面的井号（#）要转义 默认深紫色
-primaryColor: \#6200ea
-# 是否使用自定义顶栏颜色 取消注释表示启用
-# appBarColor: \#ffffff
-# 是否使用亮色顶栏，如果你的顶栏颜色是亮色的话请启用 取消注释表示启用
-# useLightAppBar: true
-# 是否在顶栏中插入背景，需要提供背景图片的路径 取消注释表示启用
-# appBarBackground: images/test-background.png
-# 是否拓展顶栏高度，滑动后会折叠至正常高度，建议在有顶栏背景时启用 取消注释表示启用
-# useLargerHeightOfAppBar: true
-# 折叠至正常高度后是否将顶栏过度成纯色 取消注释表示启用
-# fadeOutToPureColor: true
+# 样式，默认扁平样式，将值改为normal可启用正常样式
+scheme: flat
+# 不使用主题色，在扁平样式下本设置无效，主题色参考MDUI文档：https://www.mdui.org/docs/color
+primaryColor: none
+# 导航，默认抽屉式导航，将值改为tab可将导航移动至顶部应用栏
+navigation: drawer
 
 #############################################################
 

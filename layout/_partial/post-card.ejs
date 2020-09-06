@@ -1,4 +1,4 @@
-<div class="mdui-card mdui-shadow-0" style="margin-top: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+<div class="mdui-card mdui-shadow-0" style="margin-top: 16px;margin-bottom:16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
     <div class="mdui-card-primary">
         <div class="mdui-card-primary-title"><%= post.title %></div>
         <div class="mdui-card-primary-subtitle"><%= date(post.date, "YYYY-MM-DD") %></div>
@@ -6,7 +6,7 @@
     <div class="mdui-card-content"><%- post.excerpt %></div>
     <div class="mdui-card-actions">
         <button class="mdui-btn mdui-ripple-black mdui-ripple mdui-color-theme">
-            <a href="<%= url_for(post.link) %>" style="text-decoration: none;color: black">阅读更多</a>
+            <a href="<%= url_for(post.path) %>" style="text-decoration: none;color: black">阅读更多</a>
         </button>
     </div>
 </div>

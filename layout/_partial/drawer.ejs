@@ -17,30 +17,38 @@
         <li class="mdui-list-item mdui-ripple <% if (is_home()){ %>mdui-list-item-active<% } %>">
             <i class="mdui-icon material-icons mdui-list-item-icon">home</i>
             <div class="mdui-list-item-content">
-                <div class="mdui-list-item-title">首页</div>
+                <div class="mdui-list-item-title">
+                    <a href="<%= url_for("/") %>">首页</a>
+                </div>
             </div>
         </li>
         <% if (theme.category){ %>
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_category()){ %>mdui-list-item-active<% } %>">dashboard</i>
+            <li class="mdui-list-item mdui-ripple <% if (page.path === "categories/index.html" || is_category()){ %>mdui-list-item-active<% } %>">
+                <i class="mdui-icon material-icons mdui-list-item-icon">dashboard</i>
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">分类</div>
+                    <div class="mdui-list-item-title">
+                        <a href="<%= url_for("/categories") %>">分类</a>
+                    </div>
                 </div>
             </li>
         <% } %>
         <% if (theme.tag){ %>
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_tag()){ %>mdui-list-item-active<% } %>">bookmark</i>
+            <li class="mdui-list-item mdui-ripple <% if (page.path === "tags/index.html" || is_tag()){ %>mdui-list-item-active<% } %>">
+                <i class="mdui-icon material-icons mdui-list-item-icon">bookmark</i>
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">标签</div>
+                    <div class="mdui-list-item-title">
+                        <a href="<%= url_for("/tags") %>">标签</a>
+                    </div>
                 </div>
             </li>
         <% } %>
         <% if (theme.archive){ %>
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-icon material-icons mdui-list-item-icon<% if (is_archive()){ %>mdui-list-item-active<% } %>">archive</i>
+            <li class="mdui-list-item mdui-ripple <% if (page.path === "archives/index.html" || is_archive()){ %>mdui-list-item-active<% } %>">
+                <i class="mdui-icon material-icons mdui-list-item-icon">archive</i>
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">归档</div>
+                    <div class="mdui-list-item-title">
+                        <a href="<%= url_for("/archives") %>">归档</a>
+                    </div>
                 </div>
             </li>
         <% } %>

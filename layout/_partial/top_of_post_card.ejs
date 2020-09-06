@@ -1,0 +1,25 @@
+<div class="mdui-card mdui-shadow-0"
+     style="margin-top: 16px;margin-bottom: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+    <div class="mdui-card-primary">
+        <% if (page.path === "categories/index.html" || is_category()){ %>
+            <div class="mdui-card-primary-title">分类</div>
+        <% }else if (page.path === "tags/index.html" || is_tag()){ %>
+            <div class="mdui-card-primary-title">标签云</div>
+        <% } %>
+    </div>
+    <div class="mdui-card-content">
+        <% categories.data.forEach((category) => { %>
+            <div class="mdui-chip">
+                <% if (page.path === category.path + "index.html"){ %>
+                    <div class="mdui-chip-icon">
+                        <i class="mdui-icon material-icons">face</i>
+                    </div>
+                <% } %>
+                <div class="mdui-chip-title">
+                    <a href="<%= url_for(category.path) %>"
+                       style="color: black;text-decoration: none"><%- category.name %></a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>

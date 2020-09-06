@@ -1,12 +1,19 @@
-<%- include drawer.ejs %>
-<div class="mdui-appbar-with-toolbar">
-    <%- include appbar.ejs %>
-    <div class="mdui-divider"></div>
-    <div class="mdui-container">
-        <% if (is_home()){ %>
-            <% page.posts.data.forEach((post) => { %>
-                <%- include('post-card.ejs', { post: post }) %>
-            <% }); %>
+<div class="mdui-container">
+    <% if (is_category()){ %>
+        <%- include('top_of_post_card.ejs', { categories: site.categories }) %>
+    <% } else if (is_tag()){ %>
+        <%- include('top_of_post_card.ejs', { categories: site.tags }) %>
+    <% } %>
+    <% let year = "0"; %>
+    <% page.posts.data.forEach((post) => { %>
+        <% if (year !== date(post.date, "YYYY") && is_archive()){ %>
+            <% year = date(post.date, "YYYY"); %>
+            <div class="mdui-typo-title"
+                    <% if (page.posts.data.indexOf(post) === 0){ %>
+                        style="padding-top: 16px"
+                    <% } %>
+            ><%- year %>年</div>
         <% } %>
-    </div>
+        <%- include('post-card.ejs', { post: post }) %>
+    <% }); %>
 </div>
