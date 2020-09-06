@@ -36,5 +36,6 @@ theme: material-theme-for-hexo
 MDUI作者 [zdhxiong](https://github.com/zdhxiong)
 
 扫描以下二维码可向MDUI进行捐赠
-![支付宝](https://imgchr.com/i/wmKs74)
-![微信](https://imgchr.com/i/wmK6AJ)
+
+![微信](https://s1.ax1x.com/2020/09/06/wmK6AJ.jpg)
+![wmKs74.jpg](https://s1.ax1x.com/2020/09/06/wmKs74.jpg)
