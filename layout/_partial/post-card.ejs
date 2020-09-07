@@ -1,11 +1,29 @@
-<div class="mdui-card mdui-shadow-0" style="margin-top: 16px;margin-bottom:16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+<div class="mdui-card mdui-shadow-0"
+     style="margin-top: 16px;margin-bottom:16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
     <div class="mdui-card-primary">
-        <div class="mdui-card-primary-title"><%= post.title %></div>
-        <div class="mdui-card-primary-subtitle"><%= date(post.date, "YYYY-MM-DD") %></div>
+        <div class="mdui-card-primary-title">
+            <a href="<%= url_for(post.path) %>" style="text-decoration: none;color: black"><%- post.title %></a>
+        </div>
+        <div class="mdui-card-primary-subtitle">
+            <%- date(post.date, "YYYY-MM-DD") %>
+            <% if (post.categories.length !== 0 ){ %>
+                &nbsp;分类：
+                <% post.categories.data.forEach((category) => { %>
+                    <a href="<%- url_for(category.path) %>"><%- category.name %>&nbsp;</a>
+                <% }) %>
+            <% } %>
+            <% if (post.tags.length !== 0){ %>
+                &nbsp;标签：
+                <% post.tags.data.forEach((category) => { %>
+                    <a href="<%- url_for(category.path) %>"><%- category.name %>
+                        &nbsp;</a>
+                <% }) %>
+            <% } %>
+        </div>
     </div>
     <div class="mdui-card-content"><%- post.excerpt %></div>
     <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-ripple-black mdui-ripple mdui-color-theme">
+        <button class="mdui-btn mdui-ripple-black mdui-ripple">
             <a href="<%= url_for(post.path) %>" style="text-decoration: none;color: black">阅读更多</a>
         </button>
     </div>

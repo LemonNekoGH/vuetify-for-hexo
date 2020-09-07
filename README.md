@@ -1,5 +1,5 @@
 # Material-Theme-For-Hexo
-![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.9.6-%236200ea)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.9.7-%236200ea)
 ![](https://img.shields.io/badge/Hexo版本-%3E%3D5.0.0-yellow)
 ![](https://img.shields.io/badge/许可证-Apache2.0-green)
 
@@ -23,11 +23,18 @@ theme: material-theme-for-hexo
 
 请到 [Github Issues](https://github.com/LemonNekoGH/material-theme-for-hexo/issues/new?assignees=&labels=Feature+Request&template=feature-request.md) 请求新的功能
 
+### 更新日志（仅展示过去5个版本）
+- 【2020.9.7】 现在会显示文章的分类和标签
+- 【2020.9.7】 页脚可显示信息
+- 【2020.9.7】 代码高亮
+- 【2020.9.7】 评论区
+- 【2020.9.7】 上下篇文章切换
+- 【2020.9.7】 修复大图显示不全的问题
+- 【2020.9.6】 更换框架，重构
+
 ### TODO-List
 - 样式切换
 - 导航样式切换
-- 评论区
-- 上/下一篇文章切换
 - 分页（需设置每页最多文章数）
 - 多语言
 - 夜间模式

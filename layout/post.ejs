@@ -1,5 +1,5 @@
 <%- include _partial/header.ejs %>
-<div class="mdui-container">
+<div class="mdui-container" style="height: 100%">
     <% if (page.path === "categories/index.html"){ %>
         <%- include('_partial/top_of_post_card.ejs', { categories: site.categories }) %>
     <% }else if (page.path === "tags/index.html"){ %>
@@ -9,12 +9,69 @@
              style="margin-top: 16px;margin-bottom: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
             <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><%- page.title %></div>
-                <div class="mdui-card-primary-subtitle"><%- date(page.date, "YYYY-MM-DD") %></div>
+                <div class="mdui-card-primary-subtitle">
+                    <%- date(page.date, "YYYY-MM-DD") %>
+                    <% if (page.categories.length !== 0 ){ %>
+                        &nbsp;分类：
+                        <% page.categories.data.forEach((category) => { %>
+                            <a href="<%- url_for(category.path) %>"><%- category.name %>&nbsp;</a>
+                        <% }) %>
+                    <% } %>
+                    <% if (page.tags.length !== 0){ %>
+                        &nbsp;标签：
+                        <% page.tags.data.forEach((category) => { %>
+                            <a href="<%- url_for(category.path) %>"><%- category.name %>
+                                &nbsp;</a>
+                        <% }) %>
+                    <% } %>
+                </div>
             </div>
             <div class="mdui-card-content">
                 <%- page.content %>
             </div>
+            <div class="mdui-card-actions">
+                <% if (page.next){ %>
+                    <button class="mdui-btn mdui-ripple-black mdui-ripple">
+                        <a href="<%= url_for(page.next.path) %>" style="text-decoration: none;color: black">上一篇</a>
+                    </button>
+                <% } %>
+                <% if (page.prev){ %>
+                    <button class="mdui-btn mdui-ripple-black mdui-ripple mdui-float-right">
+                        <a href="<%= url_for(page.prev.path) %>" style="text-decoration: none;color: black">下一篇</a>
+                    </button>
+                <% } %>
+            </div>
         </div>
+        <% if (theme.comments === "livere" && theme.commentsUID){ %>
+            <div class="mdui-card mdui-shadow-0"
+                 style="margin-top: 16px;margin-bottom: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
+                <div class="mdui-card-primary">
+                    <div class="mdui-card-primary-title">评论区</div>
+                </div>
+                <div class="mdui-card-content">
+                    <!-- 来必力City版安装代码 -->
+                    <div id="lv-container" data-id="city" data-uid="<%- theme.commentsUID %>">
+                        <script type="text/javascript">
+                            (function (d, s) {
+                                var j, e = d.getElementsByTagName(s)[0];
+
+                                if (typeof LivereTower === 'function') {
+                                    return;
+                                }
+
+                                j = d.createElement(s);
+                                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                j.async = true;
+
+                                e.parentNode.insertBefore(j, e);
+                            })(document, 'script');
+                        </script>
+                        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- City版安装代码已完成 -->
+                </div>
+            </div>
+        <% } %>
     <% } %>
 </div>
 <%- include _partial/footer.ejs %>

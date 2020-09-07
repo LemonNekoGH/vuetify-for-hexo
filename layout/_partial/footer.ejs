@@ -1,3 +1,19 @@
+<div id="nav">
+    <div class="mdui-divider"></div>
+    <div class="mdui-bottom-nav">
+        <% if (theme.since){ %>
+            <a>
+                <label>始于 <%- theme.since %></label>
+            </a>
+        <% } %>
+        <a href="https://github.com/LemonNekoGH/material-theme-for-hexo">
+            <label>Material-Theme-For-Hexo</label>
+        </a>
+        <a href="https://hexo.io/zh-cn/">
+            <label>由Hexo强力驱动</label>
+        </a>
+    </div>
+</div>
 <!--FAB-->
 <button class="mdui-fab mdui-fab-fixed mdui-ripple mdui-ripple-black mdui-fab-hide mdui-color-white" id="fab">
     <i class="mdui-icon material-icons">&#xe5d8;</i>
@@ -9,6 +25,7 @@
         integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
         crossorigin="anonymous"
 ></script>
+<%- js("/js/highlight.pack.js") %>
 <script>
     /**
      * 缓冲函数
@@ -96,6 +113,14 @@
                 }
             }
         }
+        document.querySelectorAll(".highlight").forEach((element) => {
+            const lang = element.classList[1];
+            element.querySelectorAll(".code").forEach((codeBlock) => {
+                hljs.highlightBlock(codeBlock);
+                codeBlock.classList.remove(codeBlock.classList[2]);
+                codeBlock.classList.add(lang);
+            })
+        });
     })();
 </script>
 </body>
