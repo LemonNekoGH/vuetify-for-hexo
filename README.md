@@ -24,6 +24,7 @@ theme: material-theme-for-hexo
 请到 [Github Issues](https://github.com/LemonNekoGH/material-theme-for-hexo/issues/new?assignees=&labels=Feature+Request&template=feature-request.md) 请求新的功能
 
 ### 更新日志（仅展示过去5个版本）
+- 【2020.9.10】 适配响应式界面
 - 【2020.9.7】 现在会显示文章的分类和标签
 - 【2020.9.7】 页脚可显示信息
 - 【2020.9.7】 代码高亮
