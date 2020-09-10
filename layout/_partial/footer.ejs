@@ -1,5 +1,4 @@
 <div id="nav">
-    <div class="mdui-divider"></div>
     <div class="mdui-bottom-nav">
         <% if (theme.since){ %>
             <a>
@@ -68,14 +67,11 @@
     }
 
     (function () {
-        const drawer = new mdui.Drawer("#drawer", {overlay: true});
-        drawer.close();
+        const drawer = new mdui.Drawer("#drawer");
 
         const drawerToggle = document.querySelector("#drawer-toggle");
 
         drawerToggle.addEventListener("click", () => drawer.toggle());
-
-        const appbar = document.querySelector("#appbar")
 
         const fab = document.querySelector("#fab");
 
@@ -85,26 +81,8 @@
             });
         }
 
-        document.body.onscroll = () => {
+        const fabListener = (ev) => {
             const scrollTop = document.documentElement.scrollTop;
-            if (scrollTop >= 0 && scrollTop < 8) {
-                for (let i = 0; i <= 8; i++) {
-                    appbar.classList.remove("mdui-shadow-" + i)
-                }
-                appbar.classList.add("mdui-shadow-" + scrollTop)
-                if (scrollTop === 0) {
-                    appbar.style.background = "none"
-                } else {
-                    appbar.style.background = "#FFFFFF"
-                }
-            } else {
-                for (let i = 0; i <= 8; i++) {
-                    appbar.classList.remove("mdui-shadow-" + i)
-                }
-                appbar.classList.add("mdui-shadow-8")
-                appbar.style.background = "#FFFFFF"
-            }
-
             if (fab !== undefined) {
                 if (scrollTop > 250) {
                     fab.classList.remove("mdui-fab-hide");
@@ -113,6 +91,9 @@
                 }
             }
         }
+
+        document.body.onscroll = fabListener
+
         document.querySelectorAll(".highlight").forEach((element) => {
             const lang = element.classList[1];
             element.querySelectorAll(".code").forEach((codeBlock) => {

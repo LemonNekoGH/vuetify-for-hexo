@@ -9,7 +9,7 @@
              style="margin-top: 16px;margin-bottom: 16px;border-radius: 5px;border: 1px solid rgba(0,0,0,.12)">
             <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><%- page.title %></div>
-                <div class="mdui-card-primary-subtitle">
+                <div class="mdui-card-primary-subtitle mdui-typo">
                     <%- date(page.date, "YYYY-MM-DD") %>
                     <% if (page.categories.length !== 0 ){ %>
                         &nbsp;分类：
@@ -26,7 +26,7 @@
                     <% } %>
                 </div>
             </div>
-            <div class="mdui-card-content">
+            <div class="mdui-card-content mdui-typo">
                 <%- page.content %>
             </div>
             <div class="mdui-card-actions">
