@@ -1,5 +1,5 @@
 # Material-Theme-For-Hexo
-![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.9.7-%236200ea)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2020.9.10-%236200ea)
 ![](https://img.shields.io/badge/Hexo版本-%3E%3D5.0.0-yellow)
 ![](https://img.shields.io/badge/许可证-Apache2.0-green)
 
