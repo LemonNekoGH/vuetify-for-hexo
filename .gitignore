@@ -1,1 +1,9 @@
 .idea
+
+# for node
+node_modules
+yarn.lock
+
+#for mac
+**/.DS_Store
+**/._*
